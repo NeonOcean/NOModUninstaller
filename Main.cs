@@ -13,6 +13,15 @@ namespace NOModUninstaller {
 		};
 
 		public static bool Run () {
+			if(Paths.Sims4Path == null) {
+				if(!Entry.Silent) {
+					Abort abortMenu = new Abort();
+					abortMenu.ShowDialog();
+				}
+
+				return false;
+			}
+
 			if(!Entry.Silent) {
 				ProgressBar progressBarMenu = new ProgressBar();
 				progressBarMenu.StartBackgroundWorker(Uninstall);
@@ -129,7 +138,7 @@ namespace NOModUninstaller {
 		private static bool DeleteFiles () {
 			try {
 				if(Mod.FileList != null) {
-					List<IO.PathContainer> files = Mod.GetFileListFullPaths();
+					List<IO.PathContainer> files = Mod.GetValidFilePaths();
 					List<IO.PathContainer> fileRoots = new List<IO.PathContainer>();
 
 					bool removedFileListPath = false;

@@ -141,4 +141,10 @@
   <data name="Sims4RunningText" xml:space="preserve">
     <value>We cannot uninstall this mod while The Sims 4 is running.</value>
   </data>
+  <data name="CouldNotFindSims4DirectoryMessageText" xml:space="preserve">
+    <value>We could not find your Sims 4 folder, please select it manually.</value>
+  </data>
+  <data name="SelectedModsFolderMessageText" xml:space="preserve">
+    <value>Are you sure you want to remove the mod from this directory? It looks like you incorrectly selected the mods folder instead of your sims 4 folder.</value>
+  </data>
 </root>

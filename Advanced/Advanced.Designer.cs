@@ -30,12 +30,15 @@
 			this.UserDirectoryLabel = new System.Windows.Forms.Label();
 			this.UserDirectoryTextboxButton = new System.Windows.Forms.Button();
 			this.FolderBrowser = new System.Windows.Forms.FolderBrowserDialog();
+			this.ModsDirectoryTextbox = new System.Windows.Forms.TextBox();
+			this.ModsDirectoryLabel = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// UserDirectoryTextbox
 			// 
 			resources.ApplyResources(this.UserDirectoryTextbox, "UserDirectoryTextbox");
 			this.UserDirectoryTextbox.Name = "UserDirectoryTextbox";
+			this.UserDirectoryTextbox.TextChanged += new System.EventHandler(this.UserDirectoryTextbox_TextChanged);
 			// 
 			// UninstallButton
 			// 
@@ -68,10 +71,23 @@
 			resources.ApplyResources(this.FolderBrowser, "FolderBrowser");
 			this.FolderBrowser.RootFolder = System.Environment.SpecialFolder.MyComputer;
 			// 
+			// ModsDirectoryTextbox
+			// 
+			resources.ApplyResources(this.ModsDirectoryTextbox, "ModsDirectoryTextbox");
+			this.ModsDirectoryTextbox.Name = "ModsDirectoryTextbox";
+			this.ModsDirectoryTextbox.ReadOnly = true;
+			// 
+			// ModsDirectoryLabel
+			// 
+			resources.ApplyResources(this.ModsDirectoryLabel, "ModsDirectoryLabel");
+			this.ModsDirectoryLabel.Name = "ModsDirectoryLabel";
+			// 
 			// Advanced
 			// 
 			resources.ApplyResources(this, "$this");
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.Controls.Add(this.ModsDirectoryLabel);
+			this.Controls.Add(this.ModsDirectoryTextbox);
 			this.Controls.Add(this.UserDirectoryTextboxButton);
 			this.Controls.Add(this.UserDirectoryLabel);
 			this.Controls.Add(this.AbortButton);
@@ -96,5 +112,7 @@
 		private System.Windows.Forms.Label UserDirectoryLabel;
 		private System.Windows.Forms.Button UserDirectoryTextboxButton;
 		private System.Windows.Forms.FolderBrowserDialog FolderBrowser;
+		private System.Windows.Forms.TextBox ModsDirectoryTextbox;
+		private System.Windows.Forms.Label ModsDirectoryLabel;
 	}
 }

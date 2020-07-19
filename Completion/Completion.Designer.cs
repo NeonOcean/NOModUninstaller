@@ -51,6 +51,7 @@
 			this.MinimizeBox = false;
 			this.Name = "Completion";
 			this.ShowIcon = false;
+			this.Load += new System.EventHandler(this.Completion_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

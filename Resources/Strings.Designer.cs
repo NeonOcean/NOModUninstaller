@@ -70,6 +70,15 @@ namespace NOModUninstaller.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to We could not find your Sims 4 folder, please select it manually..
+        /// </summary>
+        internal static string CouldNotFindSims4DirectoryMessageText {
+            get {
+                return ResourceManager.GetString("CouldNotFindSims4DirectoryMessageText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Deinstallation complete..
         /// </summary>
         internal static string DeinstallationCompletePhaseText {
@@ -111,6 +120,15 @@ namespace NOModUninstaller.Resources {
         internal static string PhaseDeleteFilesText {
             get {
                 return ResourceManager.GetString("PhaseDeleteFilesText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to remove the mod from this directory? It looks like you incorrectly selected the mods folder instead of your sims 4 folder..
+        /// </summary>
+        internal static string SelectedModsFolderMessageText {
+            get {
+                return ResourceManager.GetString("SelectedModsFolderMessageText", resourceCulture);
             }
         }
         

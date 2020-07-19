@@ -8,8 +8,8 @@ namespace NOModUninstaller {
 		}
 
 		private void Setup_Load (object sender, EventArgs e) {
-			Text = string.Format(Text, Mod.ModName);
-			InformationText.Text = string.Format(InformationText.Text, Mod.ModName);
+			Text = string.Format(Text, Mod.Name);
+			InformationText.Text = string.Format(InformationText.Text, Mod.Name);
 		}
 
 		private void AdvancedButton_Click (object sender, EventArgs e) {
@@ -22,6 +22,18 @@ namespace NOModUninstaller {
 
 		private void UninstallButton_Click (object sender, EventArgs e) {
 			Hide();
+
+			if(Paths.Sims4Path == null) {
+				Advanced advancedMenu = new Advanced();
+
+				Hide();
+
+				MessageBox.Show(Localization.GetString("CouldNotFindSims4DirectoryMessageText"), "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+				advancedMenu.ShowDialog();
+
+				Close();
+			}
+
 			Main.Run();
 			Close();
 		}

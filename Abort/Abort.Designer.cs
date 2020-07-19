@@ -51,6 +51,7 @@
 			this.MinimizeBox = false;
 			this.Name = "Abort";
 			this.ShowIcon = false;
+			this.Load += new System.EventHandler(this.Abort_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

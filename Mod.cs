@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace NOModUninstaller {
 	public static class Mod {
-		public static string ModName {
+		public static string Name {
 			get; private set;
 		}
 
@@ -16,34 +16,51 @@ namespace NOModUninstaller {
 			get; private set;
 		}
 
-		public static string[] FileList {
+		public static FileListType FileList {
 			get; private set;
 		}
 
 		static Mod () {
-			ModName = Properties.Settings.Default.ModName;
-			FileListPath = new IO.PathContainer(Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "Files.txt"));
+			Name = Properties.Settings.Default.ModName;
+			string fileListFileName = Properties.Settings.Default.FileListFileName;
+			FileListPath = new IO.PathContainer(Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), fileListFileName));
 			ConfigPath = new IO.PathContainer(Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), Path.GetFileName(Application.ExecutablePath) + ".config"));
 
 			try {
 				if(File.Exists(FileListPath.GetPath())) {
-					FileList = File.ReadAllLines(FileListPath.GetPath());
+					FileList = (FileListType)XML.Read<FileListType>(File.ReadAllText(FileListPath.GetPath()));
 				}
 			} catch { }
 		}
 
-		public static List<IO.PathContainer> GetFileListFullPaths () {
-			List<IO.PathContainer> fileList = new List<IO.PathContainer>();
+		public static List<IO.PathContainer> GetValidFilePaths () {
+			List<IO.PathContainer> validFilePaths = new List<IO.PathContainer>();
 
 			if(FileList == null) {
-				return fileList;
+				return validFilePaths;
 			}
 
-			for(int fileIndex = 0; fileIndex < FileList.Length; fileIndex++) {
-				fileList.Add(new IO.PathContainer(Path.Combine(Paths.ModsPath.GetPath(), FileList[fileIndex])));
+			validFilePaths.AddRange(IO.SearchForFilesNamed(Paths.ModsPath.ToString(), FileList.UniqueFileNames, 2));
+
+			for(int fileIndex = 0; fileIndex < FileList.FilePaths.Length; fileIndex++) {
+				IO.PathContainer filePath = new IO.PathContainer(Path.Combine(Paths.ModsPath.GetPath(), FileList.FilePaths[fileIndex]));
+
+				if(File.Exists(filePath.ToString()) && !validFilePaths.Contains(filePath)) {
+					validFilePaths.Add(filePath);
+				}
 			}
 
-			return fileList;
+			return validFilePaths;
+		}
+
+		public class FileListType {
+			public string[] FilePaths {
+				get; set;
+			} = new string[0];
+
+			public string[] UniqueFileNames {
+				get; set;
+			} = new string[0];
 		}
 	}
 }

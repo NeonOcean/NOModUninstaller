@@ -7,6 +7,10 @@ namespace NOModUninstaller {
 			InitializeComponent();
 		}
 
+		private void Abort_Load (object sender, EventArgs e) {
+			AbortInformation.Text = string.Format(AbortInformation.Text, Mod.Name);
+		}
+
 		private void CloseButton_Click (object sender, EventArgs e) {
 			Close();
 			

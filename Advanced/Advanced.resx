@@ -138,7 +138,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;UserDirectoryTextbox.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="UninstallButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -148,7 +148,7 @@
     <value>NoControl</value>
   </data>
   <data name="UninstallButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>266, 89</value>
+    <value>266, 119</value>
   </data>
   <data name="UninstallButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 30</value>
@@ -169,7 +169,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;UninstallButton.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="AbortButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -178,7 +178,7 @@
     <value>NoControl</value>
   </data>
   <data name="AbortButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>372, 89</value>
+    <value>372, 119</value>
   </data>
   <data name="AbortButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 30</value>
@@ -199,7 +199,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;AbortButton.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="UserDirectoryLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -208,16 +208,16 @@
     <value>NoControl</value>
   </data>
   <data name="UserDirectoryLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 9</value>
+    <value>9, 9</value>
   </data>
   <data name="UserDirectoryLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 13</value>
+    <value>107, 13</value>
   </data>
   <data name="UserDirectoryLabel.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
   <data name="UserDirectoryLabel.Text" xml:space="preserve">
-    <value>Sims 4 user directory</value>
+    <value>Sims 4 user directory:</value>
   </data>
   <data name="&gt;&gt;UserDirectoryLabel.Name" xml:space="preserve">
     <value>UserDirectoryLabel</value>
@@ -229,7 +229,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;UserDirectoryLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="UserDirectoryTextboxButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>439, 23</value>
@@ -253,13 +253,64 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;UserDirectoryTextboxButton.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <metadata name="FolderBrowser.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
   <data name="FolderBrowser.Description" xml:space="preserve">
     <value>Select your Sims 4 user directory.</value>
+  </data>
+  <data name="ModsDirectoryTextbox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 64</value>
+  </data>
+  <data name="ModsDirectoryTextbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>421, 20</value>
+  </data>
+  <data name="ModsDirectoryTextbox.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="ModsDirectoryTextbox.Text" xml:space="preserve">
+    <value>/Mods</value>
+  </data>
+  <data name="&gt;&gt;ModsDirectoryTextbox.Name" xml:space="preserve">
+    <value>ModsDirectoryTextbox</value>
+  </data>
+  <data name="&gt;&gt;ModsDirectoryTextbox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ModsDirectoryTextbox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ModsDirectoryTextbox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ModsDirectoryLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ModsDirectoryLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 48</value>
+  </data>
+  <data name="ModsDirectoryLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 13</value>
+  </data>
+  <data name="ModsDirectoryLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="ModsDirectoryLabel.Text" xml:space="preserve">
+    <value>Removing mod from:</value>
+  </data>
+  <data name="&gt;&gt;ModsDirectoryLabel.Name" xml:space="preserve">
+    <value>ModsDirectoryLabel</value>
+  </data>
+  <data name="&gt;&gt;ModsDirectoryLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ModsDirectoryLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ModsDirectoryLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -268,13 +319,13 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>484, 131</value>
+    <value>484, 161</value>
   </data>
   <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>500, 170</value>
+    <value>500, 200</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>500, 170</value>
+    <value>500, 200</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

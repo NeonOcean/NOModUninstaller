@@ -92,6 +92,46 @@ namespace NOModUninstaller {
 			}
 		}
 
+		public static List<PathContainer> SearchForFilesNamed (string searchingDirectoryPath, string fileName, int maximumRecursion) {
+			List<PathContainer> matchingFilePaths = new List<PathContainer>();
+
+			string matchingFilePath = Path.Combine(searchingDirectoryPath, fileName);
+			if(File.Exists(matchingFilePath)) {
+				matchingFilePaths.Add(new IO.PathContainer(matchingFilePath));
+			}
+
+			if(maximumRecursion > 0) {
+				foreach(string searchingSubDirectoryName in Directory.GetDirectories(searchingDirectoryPath)) {
+					string searchingSubDirectoryPath = Path.Combine(searchingDirectoryPath, searchingSubDirectoryName);
+
+					matchingFilePaths.AddRange(SearchForFilesNamed(searchingSubDirectoryPath, fileName, maximumRecursion - 1));
+				}
+			}
+
+			return matchingFilePaths;
+		}
+
+		public static List<PathContainer> SearchForFilesNamed (string searchingDirectoryPath, string[] fileNames, int maximumRecursion) {
+			List<PathContainer> matchingFilePaths = new List<PathContainer>();
+
+			foreach(string fileName in fileNames) {
+				string matchingFilePath = Path.Combine(searchingDirectoryPath, fileName);
+				if(File.Exists(matchingFilePath)) {
+					matchingFilePaths.Add(new IO.PathContainer(matchingFilePath));
+				}
+			}
+
+			if(maximumRecursion > 0) {
+				foreach(string searchingSubDirectoryName in Directory.GetDirectories(searchingDirectoryPath)) {
+					string searchingSubDirectoryPath = Path.Combine(searchingDirectoryPath, searchingSubDirectoryName);
+
+					matchingFilePaths.AddRange(SearchForFilesNamed(searchingSubDirectoryPath, fileNames, maximumRecursion - 1));
+				}
+			}
+
+			return matchingFilePaths;
+		}
+
 		public class PathContainer {
 			public int Length {
 				get {
